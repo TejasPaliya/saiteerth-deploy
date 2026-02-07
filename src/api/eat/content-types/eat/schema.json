@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "eats",
+  "info": {
+    "singularName": "eat",
+    "pluralName": "eats",
+    "displayName": "home-eat"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

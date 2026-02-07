@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_home_instas",
+  "info": {
+    "displayName": "insta"
+  },
+  "options": {},
+  "attributes": {
+    "posting_date": {
+      "type": "datetime"
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_offers_faqs",
+  "info": {
+    "displayName": "faq",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string"
+    },
+    "answer": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

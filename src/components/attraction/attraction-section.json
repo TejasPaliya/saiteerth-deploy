@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_attraction_attraction_sections",
+  "info": {
+    "displayName": "section",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "first_point": {
+      "type": "string",
+      "required": true
+    },
+    "second_point": {
+      "type": "string",
+      "required": true
+    },
+    "third_point": {
+      "type": "string",
+      "required": true
+    },
+    "fourth_point": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

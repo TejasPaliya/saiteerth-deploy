@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_offers_points",
+  "info": {
+    "displayName": "point",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "point": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

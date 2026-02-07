@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attractions",
+  "info": {
+    "singularName": "attraction",
+    "pluralName": "attractions",
+    "displayName": "attraction"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "show_type": {
+      "type": "string"
+    },
+    "show_description": {
+      "type": "string"
+    },
+    "attraction_video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "section": {
+      "type": "component",
+      "component": "attraction.attraction-section",
+      "repeatable": false
+    },
+    "cta": {
+      "type": "component",
+      "component": "attraction.cta",
+      "repeatable": false
+    }
+  }
+}

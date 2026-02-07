@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_samadhi_ctas",
+  "info": {
+    "singularName": "home-samadhi-cta",
+    "pluralName": "home-samadhi-ctas",
+    "displayName": "home-samadhi-cta"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

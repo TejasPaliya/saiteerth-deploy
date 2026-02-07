@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_home_destinations",
+  "info": {
+    "displayName": "destination",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

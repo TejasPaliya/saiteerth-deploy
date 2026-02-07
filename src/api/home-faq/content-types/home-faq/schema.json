@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_faqs",
+  "info": {
+    "singularName": "home-faq",
+    "pluralName": "home-faqs",
+    "displayName": "home-faq"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "faq": {
+      "type": "component",
+      "component": "offers.faq",
+      "repeatable": true
+    }
+  }
+}
