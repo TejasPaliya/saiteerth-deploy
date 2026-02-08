@@ -794,6 +794,7 @@ export interface ApiOfferOffer extends Struct.CollectionTypeSchema {
     notes: Schema.Attribute.Component<'offers.notes', true>;
     point: Schema.Attribute.Component<'offers.point', true>;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String;
     steps: Schema.Attribute.Component<'offers.steps', false>;
     terms: Schema.Attribute.Component<'offers.point', true>;
     updatedAt: Schema.Attribute.DateTime;
