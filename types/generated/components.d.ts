@@ -108,6 +108,17 @@ export interface OffersFaq extends Struct.ComponentSchema {
   };
 }
 
+export interface OffersNotes extends Struct.ComponentSchema {
+  collectionName: 'components_offers_notes';
+  info: {
+    displayName: 'notes';
+    icon: 'dashboard';
+  };
+  attributes: {
+    point: Schema.Attribute.String;
+  };
+}
+
 export interface OffersPoint extends Struct.ComponentSchema {
   collectionName: 'components_offers_points';
   info: {
@@ -143,6 +154,7 @@ declare module '@strapi/strapi' {
       'home.yt': HomeYt;
       'offers.details': OffersDetails;
       'offers.faq': OffersFaq;
+      'offers.notes': OffersNotes;
       'offers.point': OffersPoint;
       'offers.steps': OffersSteps;
     }

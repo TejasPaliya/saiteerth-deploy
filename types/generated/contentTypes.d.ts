@@ -459,6 +459,7 @@ export interface ApiAttractionAttraction extends Struct.CollectionTypeSchema {
     section: Schema.Attribute.Component<'attraction.attraction-section', false>;
     show_description: Schema.Attribute.String;
     show_type: Schema.Attribute.String;
+    slug: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -755,9 +756,11 @@ export interface ApiOfferOffer extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::offer.offer'> &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
+    notes: Schema.Attribute.Component<'offers.notes', true>;
     point: Schema.Attribute.Component<'offers.point', true>;
     publishedAt: Schema.Attribute.DateTime;
     steps: Schema.Attribute.Component<'offers.steps', false>;
+    terms: Schema.Attribute.Component<'offers.point', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

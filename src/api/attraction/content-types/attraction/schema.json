@@ -39,6 +39,9 @@
       "type": "component",
       "component": "attraction.cta",
       "repeatable": false
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }

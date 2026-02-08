@@ -46,6 +46,16 @@
       "type": "component",
       "component": "offers.point",
       "repeatable": true
+    },
+    "notes": {
+      "type": "component",
+      "component": "offers.notes",
+      "repeatable": true
+    },
+    "terms": {
+      "type": "component",
+      "component": "offers.point",
+      "repeatable": true
     }
   }
 }
