@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_offers_tickets",
+  "info": {
+    "displayName": "tickets",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "height": {
+      "type": "string"
+    },
+    "weekday_price": {
+      "type": "string"
+    },
+    "weekend_price": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

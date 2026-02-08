@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "all_offers",
+  "info": {
+    "singularName": "all-offer",
+    "pluralName": "all-offers",
+    "displayName": "all-offer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "string"
+    },
+    "video": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tickets": {
+      "type": "component",
+      "component": "offers.tickets",
+      "repeatable": true
+    },
+    "terms": {
+      "type": "component",
+      "component": "offers.point",
+      "repeatable": true
+    },
+    "notes": {
+      "type": "component",
+      "component": "offers.point",
+      "repeatable": true
+    }
+  }
+}

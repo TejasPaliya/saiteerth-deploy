@@ -430,6 +430,41 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAllOfferAllOffer extends Struct.SingleTypeSchema {
+  collectionName: 'all_offers';
+  info: {
+    displayName: 'all-offer';
+    pluralName: 'all-offers';
+    singularName: 'all-offer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::all-offer.all-offer'
+    > &
+      Schema.Attribute.Private;
+    notes: Schema.Attribute.Component<'offers.point', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    terms: Schema.Attribute.Component<'offers.point', true>;
+    tickets: Schema.Attribute.Component<'offers.tickets', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    video: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+  };
+}
+
 export interface ApiAttractionAttraction extends Struct.CollectionTypeSchema {
   collectionName: 'attractions';
   info: {
@@ -1277,6 +1312,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::all-offer.all-offer': ApiAllOfferAllOffer;
       'api::attraction.attraction': ApiAttractionAttraction;
       'api::eat.eat': ApiEatEat;
       'api::home-destination.home-destination': ApiHomeDestinationHomeDestination;

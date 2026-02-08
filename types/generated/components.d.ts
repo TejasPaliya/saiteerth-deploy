@@ -143,6 +143,20 @@ export interface OffersSteps extends Struct.ComponentSchema {
   };
 }
 
+export interface OffersTickets extends Struct.ComponentSchema {
+  collectionName: 'components_offers_tickets';
+  info: {
+    displayName: 'tickets';
+    icon: 'dashboard';
+  };
+  attributes: {
+    height: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+    weekday_price: Schema.Attribute.String;
+    weekend_price: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -157,6 +171,7 @@ declare module '@strapi/strapi' {
       'offers.notes': OffersNotes;
       'offers.point': OffersPoint;
       'offers.steps': OffersSteps;
+      'offers.tickets': OffersTickets;
     }
   }
 }
