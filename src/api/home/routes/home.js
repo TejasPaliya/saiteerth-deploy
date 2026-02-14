@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * home-indoor router
+ * home router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::home-indoor.home-indoor');
+module.exports = createCoreRouter('api::home.home');

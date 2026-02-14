@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_home_reviews",
+  "info": {
+    "displayName": "review",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "rating": {
+      "type": "integer"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "comments": {
+      "type": "component",
+      "component": "home.comments",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

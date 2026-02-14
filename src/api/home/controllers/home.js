@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * home-insta controller
+ * home controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::home-insta.home-insta');
+module.exports = createCoreController('api::home.home');

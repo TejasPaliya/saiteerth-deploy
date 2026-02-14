@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * home-indoor service
+ * home service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::home-indoor.home-indoor');
+module.exports = createCoreService('api::home.home');

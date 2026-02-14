@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_home_instagrams",
+  "info": {
+    "displayName": "instagram",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "handle_name": {
+      "type": "string"
+    },
+    "handle_sub": {
+      "type": "string"
+    },
+    "followers": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "reel": {
+      "type": "component",
+      "component": "home.reel",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

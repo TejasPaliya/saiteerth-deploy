@@ -501,65 +501,6 @@ export interface ApiAttractionAttraction extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiEatEat extends Struct.SingleTypeSchema {
-  collectionName: 'eats';
-  info: {
-    displayName: 'home-eat';
-    pluralName: 'eats';
-    singularName: 'eat';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    images: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::eat.eat'> &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiHomeDestinationHomeDestination
-  extends Struct.SingleTypeSchema {
-  collectionName: 'home_destinations';
-  info: {
-    displayName: 'home-destination';
-    pluralName: 'home-destinations';
-    singularName: 'home-destination';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    destinations: Schema.Attribute.Component<'home.destination', true>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::home-destination.home-destination'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiHomeFaqHomeFaq extends Struct.CollectionTypeSchema {
   collectionName: 'home_faqs';
   info: {
@@ -581,67 +522,6 @@ export interface ApiHomeFaqHomeFaq extends Struct.CollectionTypeSchema {
       'api::home-faq.home-faq'
     > &
       Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiHomeIndoorHomeIndoor extends Struct.SingleTypeSchema {
-  collectionName: 'home_indoors';
-  info: {
-    displayName: 'home-indoor';
-    pluralName: 'home-indoors';
-    singularName: 'home-indoor';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::home-indoor.home-indoor'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    subtitle: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
-export interface ApiHomeInstaHomeInsta extends Struct.SingleTypeSchema {
-  collectionName: 'home_instas';
-  info: {
-    displayName: 'home-insta';
-    pluralName: 'home-instas';
-    singularName: 'home-insta';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    followers: Schema.Attribute.String;
-    handle_name: Schema.Attribute.String;
-    insta: Schema.Attribute.Component<'home.insta', false>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::home-insta.home-insta'
-    > &
-      Schema.Attribute.Private;
-    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -766,6 +646,43 @@ export interface ApiHomeYtHomeYt extends Struct.SingleTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     yt: Schema.Attribute.Component<'home.yt', true>;
+  };
+}
+
+export interface ApiHomeHome extends Struct.SingleTypeSchema {
+  collectionName: 'homes';
+  info: {
+    displayName: 'home';
+    pluralName: 'homes';
+    singularName: 'home';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    destination: Schema.Attribute.Component<'home.destination', true>;
+    eats: Schema.Attribute.Component<'home.eats', false>;
+    faq: Schema.Attribute.Component<'offers.faq', true>;
+    hero_video: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    indoor: Schema.Attribute.Component<'home.indoor', false>;
+    instagram: Schema.Attribute.Component<'home.instagram', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
+      Schema.Attribute.Private;
+    package_heading: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    review: Schema.Attribute.Component<'home.review', false>;
+    samadhi: Schema.Attribute.Component<'home.samadhi', false>;
+    stories: Schema.Attribute.Component<'home.stories', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    youtube: Schema.Attribute.Component<'home.youtube', false>;
   };
 }
 
@@ -1314,15 +1231,12 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::all-offer.all-offer': ApiAllOfferAllOffer;
       'api::attraction.attraction': ApiAttractionAttraction;
-      'api::eat.eat': ApiEatEat;
-      'api::home-destination.home-destination': ApiHomeDestinationHomeDestination;
       'api::home-faq.home-faq': ApiHomeFaqHomeFaq;
-      'api::home-indoor.home-indoor': ApiHomeIndoorHomeIndoor;
-      'api::home-insta.home-insta': ApiHomeInstaHomeInsta;
       'api::home-samadhi-cta.home-samadhi-cta': ApiHomeSamadhiCtaHomeSamadhiCta;
       'api::home-samadhi.home-samadhi': ApiHomeSamadhiHomeSamadhi;
       'api::home-testimonial.home-testimonial': ApiHomeTestimonialHomeTestimonial;
       'api::home-yt.home-yt': ApiHomeYtHomeYt;
+      'api::home.home': ApiHomeHome;
       'api::offer.offer': ApiOfferOffer;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

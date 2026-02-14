@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_home_youtubes",
+  "info": {
+    "displayName": "youtube",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "sub": {
+      "type": "string"
+    },
+    "link": {
+      "type": "component",
+      "component": "home.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

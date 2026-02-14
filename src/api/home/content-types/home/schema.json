@@ -1,0 +1,73 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "home"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero_video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "stories": {
+      "type": "component",
+      "component": "home.stories",
+      "repeatable": false
+    },
+    "package_heading": {
+      "type": "string"
+    },
+    "samadhi": {
+      "type": "component",
+      "component": "home.samadhi",
+      "repeatable": false
+    },
+    "indoor": {
+      "type": "component",
+      "component": "home.indoor",
+      "repeatable": false
+    },
+    "eats": {
+      "type": "component",
+      "component": "home.eats",
+      "repeatable": false
+    },
+    "youtube": {
+      "type": "component",
+      "component": "home.youtube",
+      "repeatable": false
+    },
+    "instagram": {
+      "type": "component",
+      "component": "home.instagram",
+      "repeatable": false
+    },
+    "review": {
+      "type": "component",
+      "component": "home.review",
+      "repeatable": false
+    },
+    "destination": {
+      "type": "component",
+      "component": "home.destination",
+      "repeatable": true
+    },
+    "faq": {
+      "type": "component",
+      "component": "offers.faq",
+      "repeatable": true
+    }
+  }
+}

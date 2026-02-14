@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_home_indoors",
+  "info": {
+    "displayName": "indoor",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "sub": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

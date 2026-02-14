@@ -29,6 +29,19 @@ export interface AttractionCta extends Struct.ComponentSchema {
   };
 }
 
+export interface HomeComments extends Struct.ComponentSchema {
+  collectionName: 'components_home_comments';
+  info: {
+    displayName: 'comments';
+    icon: 'dashboard';
+  };
+  attributes: {
+    comment: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    rating: Schema.Attribute.Integer;
+  };
+}
+
 export interface HomeDestination extends Struct.ComponentSchema {
   collectionName: 'components_home_destinations';
   info: {
@@ -41,6 +54,31 @@ export interface HomeDestination extends Struct.ComponentSchema {
   };
 }
 
+export interface HomeEats extends Struct.ComponentSchema {
+  collectionName: 'components_home_eats';
+  info: {
+    displayName: 'eats';
+    icon: 'dashboard';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    images: Schema.Attribute.Media<'images' | 'files', true>;
+  };
+}
+
+export interface HomeIndoor extends Struct.ComponentSchema {
+  collectionName: 'components_home_indoors';
+  info: {
+    displayName: 'indoor';
+    icon: 'dashboard';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    sub: Schema.Attribute.String;
+    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface HomeInsta extends Struct.ComponentSchema {
   collectionName: 'components_home_instas';
   info: {
@@ -49,6 +87,78 @@ export interface HomeInsta extends Struct.ComponentSchema {
   attributes: {
     posting_date: Schema.Attribute.DateTime;
     video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface HomeInstagram extends Struct.ComponentSchema {
+  collectionName: 'components_home_instagrams';
+  info: {
+    displayName: 'instagram';
+    icon: 'dashboard';
+  };
+  attributes: {
+    followers: Schema.Attribute.String;
+    handle_name: Schema.Attribute.String;
+    handle_sub: Schema.Attribute.String;
+    logo: Schema.Attribute.Media<'images' | 'files'>;
+    reel: Schema.Attribute.Component<'home.reel', true>;
+  };
+}
+
+export interface HomeLink extends Struct.ComponentSchema {
+  collectionName: 'components_home_links';
+  info: {
+    displayName: 'link';
+    icon: 'dashboard';
+  };
+  attributes: {};
+}
+
+export interface HomeReel extends Struct.ComponentSchema {
+  collectionName: 'components_home_reels';
+  info: {
+    displayName: 'reel';
+  };
+  attributes: {
+    reel: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    upload_date: Schema.Attribute.DateTime;
+  };
+}
+
+export interface HomeReview extends Struct.ComponentSchema {
+  collectionName: 'components_home_reviews';
+  info: {
+    displayName: 'review';
+    icon: 'dashboard';
+  };
+  attributes: {
+    comments: Schema.Attribute.Component<'home.comments', true>;
+    heading: Schema.Attribute.String;
+    rating: Schema.Attribute.Integer;
+  };
+}
+
+export interface HomeSamadhi extends Struct.ComponentSchema {
+  collectionName: 'components_home_samadhis';
+  info: {
+    displayName: 'samadhi';
+    icon: 'dashboard';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface HomeStories extends Struct.ComponentSchema {
+  collectionName: 'components_home_stories';
+  info: {
+    displayName: 'stories';
+    icon: 'dashboard';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    sub: Schema.Attribute.String;
   };
 }
 
@@ -69,6 +179,19 @@ export interface HomeTestimonial extends Struct.ComponentSchema {
         number
       >;
     review: Schema.Attribute.Text;
+  };
+}
+
+export interface HomeYoutube extends Struct.ComponentSchema {
+  collectionName: 'components_home_youtubes';
+  info: {
+    displayName: 'youtube';
+    icon: 'dashboard';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'home.link', true>;
+    sub: Schema.Attribute.String;
   };
 }
 
@@ -162,9 +285,19 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'attraction.attraction-section': AttractionAttractionSection;
       'attraction.cta': AttractionCta;
+      'home.comments': HomeComments;
       'home.destination': HomeDestination;
+      'home.eats': HomeEats;
+      'home.indoor': HomeIndoor;
       'home.insta': HomeInsta;
+      'home.instagram': HomeInstagram;
+      'home.link': HomeLink;
+      'home.reel': HomeReel;
+      'home.review': HomeReview;
+      'home.samadhi': HomeSamadhi;
+      'home.stories': HomeStories;
       'home.testimonial': HomeTestimonial;
+      'home.youtube': HomeYoutube;
       'home.yt': HomeYt;
       'offers.details': OffersDetails;
       'offers.faq': OffersFaq;
