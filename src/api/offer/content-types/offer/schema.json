@@ -56,6 +56,9 @@
       "type": "component",
       "component": "offers.point",
       "repeatable": true
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }
