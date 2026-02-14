@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "all_attractions",
+  "info": {
+    "singularName": "all-attraction",
+    "pluralName": "all-attractions",
+    "displayName": "all-attraction"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "faq": {
+      "type": "component",
+      "component": "offers.faq",
+      "repeatable": true
+    }
+  }
+}

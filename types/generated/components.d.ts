@@ -111,7 +111,9 @@ export interface HomeLink extends Struct.ComponentSchema {
     displayName: 'link';
     icon: 'dashboard';
   };
-  attributes: {};
+  attributes: {
+    link: Schema.Attribute.String;
+  };
 }
 
 export interface HomeReel extends Struct.ComponentSchema {

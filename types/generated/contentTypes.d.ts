@@ -430,6 +430,36 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAllAttractionAllAttraction extends Struct.SingleTypeSchema {
+  collectionName: 'all_attractions';
+  info: {
+    displayName: 'all-attraction';
+    pluralName: 'all-attractions';
+    singularName: 'all-attraction';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    faq: Schema.Attribute.Component<'offers.faq', true>;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::all-attraction.all-attraction'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiAllOfferAllOffer extends Struct.SingleTypeSchema {
   collectionName: 'all_offers';
   info: {
@@ -1230,6 +1260,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::all-attraction.all-attraction': ApiAllAttractionAllAttraction;
       'api::all-offer.all-offer': ApiAllOfferAllOffer;
       'api::attraction.attraction': ApiAttractionAttraction;
       'api::home-faq.home-faq': ApiHomeFaqHomeFaq;

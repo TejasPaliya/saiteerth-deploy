@@ -5,6 +5,10 @@
     "icon": "dashboard"
   },
   "options": {},
-  "attributes": {},
+  "attributes": {
+    "link": {
+      "type": "string"
+    }
+  },
   "config": {}
 }
