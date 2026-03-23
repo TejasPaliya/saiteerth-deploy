@@ -8,6 +8,9 @@
   "attributes": {
     "link": {
       "type": "string"
+    },
+    "title": {
+      "type": "string"
     }
   },
   "config": {}

@@ -8,10 +8,22 @@ export interface AttractionAttractionSection extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
+    first_icom: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     first_point: Schema.Attribute.String & Schema.Attribute.Required;
+    fourth_icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     fourth_point: Schema.Attribute.String & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    second_icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     second_point: Schema.Attribute.String & Schema.Attribute.Required;
+    third_icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     third_point: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -29,6 +41,74 @@ export interface AttractionCta extends Struct.ComponentSchema {
   };
 }
 
+export interface FoodItem extends Struct.ComponentSchema {
+  collectionName: 'components_food_items';
+  info: {
+    displayName: 'item';
+  };
+  attributes: {};
+}
+
+export interface FoodMenu extends Struct.ComponentSchema {
+  collectionName: 'components_food_menus';
+  info: {
+    displayName: 'menu';
+    icon: 'clock';
+  };
+  attributes: {
+    category: Schema.Attribute.Component<'food.menu-category', true>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface FoodMenuCategory extends Struct.ComponentSchema {
+  collectionName: 'components_food_menu_categories';
+  info: {
+    displayName: 'menu-category';
+  };
+  attributes: {
+    category: Schema.Attribute.String;
+    item: Schema.Attribute.Component<'food.item', true>;
+  };
+}
+
+export interface FoodStallCard extends Struct.ComponentSchema {
+  collectionName: 'components_food_stall_cards';
+  info: {
+    displayName: 'stall_card';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    stall_menu: Schema.Attribute.Component<'food.stall-menu', true>;
+  };
+}
+
+export interface FoodStallMenu extends Struct.ComponentSchema {
+  collectionName: 'components_food_stall_menus';
+  info: {
+    displayName: 'stall-menu';
+  };
+  attributes: {
+    item: Schema.Attribute.String;
+  };
+}
+
+export interface FoodStalls extends Struct.ComponentSchema {
+  collectionName: 'components_food_stalls';
+  info: {
+    displayName: 'stalls';
+  };
+  attributes: {
+    card: Schema.Attribute.Component<'food.stall-card', true>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+  };
+}
+
 export interface HomeComments extends Struct.ComponentSchema {
   collectionName: 'components_home_comments';
   info: {
@@ -38,6 +118,7 @@ export interface HomeComments extends Struct.ComponentSchema {
   attributes: {
     comment: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String;
     rating: Schema.Attribute.Integer;
   };
 }
@@ -49,8 +130,8 @@ export interface HomeDestination extends Struct.ComponentSchema {
     icon: 'dashboard';
   };
   attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
-    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -113,6 +194,7 @@ export interface HomeLink extends Struct.ComponentSchema {
   };
   attributes: {
     link: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -122,6 +204,7 @@ export interface HomeReel extends Struct.ComponentSchema {
     displayName: 'reel';
   };
   attributes: {
+    link: Schema.Attribute.String;
     reel: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     upload_date: Schema.Attribute.DateTime;
   };
@@ -208,6 +291,29 @@ export interface HomeYt extends Struct.ComponentSchema {
   };
 }
 
+export interface NearbyCities extends Struct.ComponentSchema {
+  collectionName: 'components_nearby_cities';
+  info: {
+    displayName: 'cities';
+  };
+  attributes: {
+    city_name: Schema.Attribute.String;
+    distance: Schema.Attribute.String;
+  };
+}
+
+export interface NearbyNearbyCities extends Struct.ComponentSchema {
+  collectionName: 'components_nearby_nearby_cities';
+  info: {
+    displayName: 'nearby_cities';
+  };
+  attributes: {
+    cities: Schema.Attribute.Component<'nearby.cities', true>;
+    cta_description: Schema.Attribute.Text;
+    cta_heading: Schema.Attribute.String;
+  };
+}
+
 export interface OffersDetails extends Struct.ComponentSchema {
   collectionName: 'components_offers_details';
   info: {
@@ -287,6 +393,12 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'attraction.attraction-section': AttractionAttractionSection;
       'attraction.cta': AttractionCta;
+      'food.item': FoodItem;
+      'food.menu': FoodMenu;
+      'food.menu-category': FoodMenuCategory;
+      'food.stall-card': FoodStallCard;
+      'food.stall-menu': FoodStallMenu;
+      'food.stalls': FoodStalls;
       'home.comments': HomeComments;
       'home.destination': HomeDestination;
       'home.eats': HomeEats;
@@ -301,6 +413,8 @@ declare module '@strapi/strapi' {
       'home.testimonial': HomeTestimonial;
       'home.youtube': HomeYoutube;
       'home.yt': HomeYt;
+      'nearby.cities': NearbyCities;
+      'nearby.nearby-cities': NearbyNearbyCities;
       'offers.details': OffersDetails;
       'offers.faq': OffersFaq;
       'offers.notes': OffersNotes;

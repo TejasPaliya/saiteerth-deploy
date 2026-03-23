@@ -457,6 +457,7 @@ export interface ApiAllAttractionAllAttraction extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -513,6 +514,9 @@ export interface ApiAttractionAttraction extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     cta: Schema.Attribute.Component<'attraction.cta', false>;
+    first_icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -525,6 +529,181 @@ export interface ApiAttractionAttraction extends Struct.CollectionTypeSchema {
     show_description: Schema.Attribute.String;
     show_type: Schema.Attribute.String;
     slug: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
+  collectionName: 'blogs';
+  info: {
+    displayName: 'blog';
+    pluralName: 'blogs';
+    singularName: 'blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContactFormContactForm extends Struct.CollectionTypeSchema {
+  collectionName: 'contact_forms';
+  info: {
+    displayName: 'contact-form';
+    pluralName: 'contact-forms';
+    singularName: 'contact-form';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-form.contact-form'
+    > &
+      Schema.Attribute.Private;
+    mail: Schema.Attribute.String;
+    message: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+    number: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContactContact extends Struct.SingleTypeSchema {
+  collectionName: 'contacts';
+  info: {
+    displayName: 'contact';
+    pluralName: 'contacts';
+    singularName: 'contact';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faq: Schema.Attribute.Component<'offers.faq', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact.contact'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFoodFood extends Struct.SingleTypeSchema {
+  collectionName: 'foods';
+  info: {
+    displayName: 'food';
+    pluralName: 'foods';
+    singularName: 'food';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero_description: Schema.Attribute.Text;
+    hero_heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::food.food'> &
+      Schema.Attribute.Private;
+    menu: Schema.Attribute.Component<'food.menu', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    stall: Schema.Attribute.Component<'food.stalls', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface ApiGroupFormGroupForm extends Struct.CollectionTypeSchema {
+  collectionName: 'group_forms';
+  info: {
+    displayName: 'group-form';
+    pluralName: 'group-forms';
+    singularName: 'group-form';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    city: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.String;
+    email: Schema.Attribute.String;
+    event_type: Schema.Attribute.String;
+    guest_num: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::group-form.group-form'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    number: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiGroupGroup extends Struct.SingleTypeSchema {
+  collectionName: 'groups';
+  info: {
+    displayName: 'group';
+    pluralName: 'groups';
+    singularName: 'group';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faw: Schema.Attribute.Component<'offers.faq', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::group.group'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -716,6 +895,97 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHowToReachHowToReach extends Struct.SingleTypeSchema {
+  collectionName: 'how_to_reaches';
+  info: {
+    displayName: 'how-to-reach';
+    pluralName: 'how-to-reaches';
+    singularName: 'how-to-reach';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faq: Schema.Attribute.Component<'offers.faq', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::how-to-reach.how-to-reach'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiInfluencerFormInfluencerForm
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'influencer_forms';
+  info: {
+    displayName: 'influencer-form';
+    pluralName: 'influencer-forms';
+    singularName: 'influencer-form';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.String;
+    insta_link: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::influencer-form.influencer-form'
+    > &
+      Schema.Attribute.Private;
+    mail: Schema.Attribute.String;
+    message: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+    number: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    subscribers: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiInfluencerInfluencer extends Struct.SingleTypeSchema {
+  collectionName: 'influencers';
+  info: {
+    displayName: 'influencer';
+    pluralName: 'influencers';
+    singularName: 'influencer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faq: Schema.Attribute.Component<'offers.faq', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::influencer.influencer'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiOfferOffer extends Struct.CollectionTypeSchema {
   collectionName: 'offers';
   info: {
@@ -727,6 +997,9 @@ export interface ApiOfferOffer extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    card_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -734,6 +1007,7 @@ export interface ApiOfferOffer extends Struct.CollectionTypeSchema {
     details: Schema.Attribute.Component<'offers.details', false>;
     faq: Schema.Attribute.Component<'offers.faq', true>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::offer.offer'> &
       Schema.Attribute.Private;
@@ -741,12 +1015,50 @@ export interface ApiOfferOffer extends Struct.CollectionTypeSchema {
     notes: Schema.Attribute.Component<'offers.notes', true>;
     point: Schema.Attribute.Component<'offers.point', true>;
     publishedAt: Schema.Attribute.DateTime;
+    seq: Schema.Attribute.Integer;
     slug: Schema.Attribute.String;
     steps: Schema.Attribute.Component<'offers.steps', false>;
     terms: Schema.Attribute.Component<'offers.point', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiReachReach extends Struct.SingleTypeSchema {
+  collectionName: 'reaches';
+  info: {
+    displayName: 'reach';
+    pluralName: 'reaches';
+    singularName: 'reach';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    airport_distance: Schema.Attribute.String;
+    airport_time: Schema.Attribute.String;
+    bus_distance: Schema.Attribute.String;
+    bus_time: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero_description: Schema.Attribute.Text;
+    hero_heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::reach.reach'> &
+      Schema.Attribute.Private;
+    mandir_distance: Schema.Attribute.String;
+    mandir_time: Schema.Attribute.String;
+    nearby_cities: Schema.Attribute.Component<'nearby.nearby-cities', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    railway_distance: Schema.Attribute.String;
+    railway_time: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    wetn_joy_distance: Schema.Attribute.String;
   };
 }
 
@@ -1263,13 +1575,23 @@ declare module '@strapi/strapi' {
       'api::all-attraction.all-attraction': ApiAllAttractionAllAttraction;
       'api::all-offer.all-offer': ApiAllOfferAllOffer;
       'api::attraction.attraction': ApiAttractionAttraction;
+      'api::blog.blog': ApiBlogBlog;
+      'api::contact-form.contact-form': ApiContactFormContactForm;
+      'api::contact.contact': ApiContactContact;
+      'api::food.food': ApiFoodFood;
+      'api::group-form.group-form': ApiGroupFormGroupForm;
+      'api::group.group': ApiGroupGroup;
       'api::home-faq.home-faq': ApiHomeFaqHomeFaq;
       'api::home-samadhi-cta.home-samadhi-cta': ApiHomeSamadhiCtaHomeSamadhiCta;
       'api::home-samadhi.home-samadhi': ApiHomeSamadhiHomeSamadhi;
       'api::home-testimonial.home-testimonial': ApiHomeTestimonialHomeTestimonial;
       'api::home-yt.home-yt': ApiHomeYtHomeYt;
       'api::home.home': ApiHomeHome;
+      'api::how-to-reach.how-to-reach': ApiHowToReachHowToReach;
+      'api::influencer-form.influencer-form': ApiInfluencerFormInfluencerForm;
+      'api::influencer.influencer': ApiInfluencerInfluencer;
       'api::offer.offer': ApiOfferOffer;
+      'api::reach.reach': ApiReachReach;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

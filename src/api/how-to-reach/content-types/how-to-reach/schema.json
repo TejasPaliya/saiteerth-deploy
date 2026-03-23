@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "how_to_reaches",
+  "info": {
+    "singularName": "how-to-reach",
+    "pluralName": "how-to-reaches",
+    "displayName": "how-to-reach"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "faq": {
+      "type": "component",
+      "component": "offers.faq",
+      "repeatable": true
+    }
+  }
+}

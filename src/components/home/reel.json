@@ -17,6 +17,9 @@
     },
     "upload_date": {
       "type": "datetime"
+    },
+    "link": {
+      "type": "string"
     }
   },
   "config": {}

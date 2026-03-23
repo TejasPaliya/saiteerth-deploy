@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "influencer_forms",
+  "info": {
+    "singularName": "influencer-form",
+    "pluralName": "influencer-forms",
+    "displayName": "influencer-form"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "number": {
+      "type": "string"
+    },
+    "mail": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "subscribers": {
+      "type": "string"
+    },
+    "insta_link": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    }
+  }
+}

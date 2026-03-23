@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "group_forms",
+  "info": {
+    "singularName": "group-form",
+    "pluralName": "group-forms",
+    "displayName": "group-form"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "event_type": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "number": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "guest_num": {
+      "type": "string"
+    }
+  }
+}

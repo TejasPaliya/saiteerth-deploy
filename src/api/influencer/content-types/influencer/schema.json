@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "influencers",
+  "info": {
+    "singularName": "influencer",
+    "pluralName": "influencers",
+    "displayName": "influencer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "faq": {
+      "type": "component",
+      "component": "offers.faq",
+      "repeatable": true
+    }
+  }
+}

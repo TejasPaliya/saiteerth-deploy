@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_food_menus",
+  "info": {
+    "displayName": "menu",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "category": {
+      "type": "component",
+      "component": "food.menu-category",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

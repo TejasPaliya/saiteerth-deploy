@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_food_menu_categories",
+  "info": {
+    "displayName": "menu-category"
+  },
+  "options": {},
+  "attributes": {
+    "category": {
+      "type": "string"
+    },
+    "item": {
+      "type": "component",
+      "component": "food.item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

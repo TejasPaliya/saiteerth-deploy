@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_food_stall_menus",
+  "info": {
+    "displayName": "stall-menu"
+  },
+  "options": {},
+  "attributes": {
+    "item": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_nearby_cities",
+  "info": {
+    "displayName": "cities"
+  },
+  "options": {},
+  "attributes": {
+    "city_name": {
+      "type": "string"
+    },
+    "distance": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

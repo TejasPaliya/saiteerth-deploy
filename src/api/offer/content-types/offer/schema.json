@@ -59,6 +59,22 @@
     },
     "slug": {
       "type": "string"
+    },
+    "card_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "link": {
+      "type": "string"
+    },
+    "seq": {
+      "type": "integer"
     }
   }
 }

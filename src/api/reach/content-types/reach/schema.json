@@ -1,0 +1,63 @@
+{
+  "kind": "singleType",
+  "collectionName": "reaches",
+  "info": {
+    "singularName": "reach",
+    "pluralName": "reaches",
+    "displayName": "reach"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero_heading": {
+      "type": "string"
+    },
+    "hero_description": {
+      "type": "text"
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "railway_distance": {
+      "type": "string"
+    },
+    "railway_time": {
+      "type": "string"
+    },
+    "bus_distance": {
+      "type": "string"
+    },
+    "bus_time": {
+      "type": "string"
+    },
+    "airport_distance": {
+      "type": "string"
+    },
+    "airport_time": {
+      "type": "string"
+    },
+    "mandir_distance": {
+      "type": "string"
+    },
+    "mandir_time": {
+      "type": "string"
+    },
+    "wetn_joy_distance": {
+      "type": "string"
+    },
+    "nearby_cities": {
+      "type": "component",
+      "component": "nearby.nearby-cities",
+      "repeatable": false
+    }
+  }
+}

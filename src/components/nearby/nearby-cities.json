@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_nearby_nearby_cities",
+  "info": {
+    "displayName": "nearby_cities"
+  },
+  "options": {},
+  "attributes": {
+    "cta_heading": {
+      "type": "string"
+    },
+    "cta_description": {
+      "type": "text"
+    },
+    "cities": {
+      "type": "component",
+      "component": "nearby.cities",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

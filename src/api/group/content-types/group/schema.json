@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "groups",
+  "info": {
+    "singularName": "group",
+    "pluralName": "groups",
+    "displayName": "group"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "faw": {
+      "type": "component",
+      "component": "offers.faq",
+      "repeatable": true
+    }
+  }
+}

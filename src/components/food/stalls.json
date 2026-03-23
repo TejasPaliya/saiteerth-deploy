@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_food_stalls",
+  "info": {
+    "displayName": "stalls"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "card": {
+      "type": "component",
+      "component": "food.stall-card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
