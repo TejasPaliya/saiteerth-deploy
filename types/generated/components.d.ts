@@ -334,7 +334,7 @@ export interface OffersFaq extends Struct.ComponentSchema {
     icon: 'dashboard';
   };
   attributes: {
-    answer: Schema.Attribute.Text;
+    answer_block: Schema.Attribute.Blocks;
     question: Schema.Attribute.String;
   };
 }

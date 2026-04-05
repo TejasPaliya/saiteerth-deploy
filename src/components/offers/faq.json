@@ -9,8 +9,8 @@
     "question": {
       "type": "string"
     },
-    "answer": {
-      "type": "text"
+    "answer_block": {
+      "type": "blocks"
     }
   },
   "config": {}

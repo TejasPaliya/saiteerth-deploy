@@ -738,126 +738,6 @@ export interface ApiHomeFaqHomeFaq extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiHomeSamadhiCtaHomeSamadhiCta
-  extends Struct.SingleTypeSchema {
-  collectionName: 'home_samadhi_ctas';
-  info: {
-    displayName: 'home-samadhi-cta';
-    pluralName: 'home-samadhi-ctas';
-    singularName: 'home-samadhi-cta';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::home-samadhi-cta.home-samadhi-cta'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
-export interface ApiHomeSamadhiHomeSamadhi extends Struct.SingleTypeSchema {
-  collectionName: 'home_samadhis';
-  info: {
-    displayName: 'home-samadhi';
-    pluralName: 'home-samadhis';
-    singularName: 'home-samadhi';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    line: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::home-samadhi.home-samadhi'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
-export interface ApiHomeTestimonialHomeTestimonial
-  extends Struct.SingleTypeSchema {
-  collectionName: 'home_testimonials';
-  info: {
-    displayName: 'home-testimonial';
-    pluralName: 'home-testimonials';
-    singularName: 'home-testimonial';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::home-testimonial.home-testimonial'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    ratings: Schema.Attribute.String;
-    review_num: Schema.Attribute.Integer;
-    testimonial: Schema.Attribute.Component<'home.testimonial', true>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiHomeYtHomeYt extends Struct.SingleTypeSchema {
-  collectionName: 'home_yts';
-  info: {
-    displayName: 'home-yt';
-    pluralName: 'home-yts';
-    singularName: 'home-yt';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::home-yt.home-yt'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    yt: Schema.Attribute.Component<'home.yt', true>;
-  };
-}
-
 export interface ApiHomeHome extends Struct.SingleTypeSchema {
   collectionName: 'homes';
   info: {
@@ -1582,10 +1462,6 @@ declare module '@strapi/strapi' {
       'api::group-form.group-form': ApiGroupFormGroupForm;
       'api::group.group': ApiGroupGroup;
       'api::home-faq.home-faq': ApiHomeFaqHomeFaq;
-      'api::home-samadhi-cta.home-samadhi-cta': ApiHomeSamadhiCtaHomeSamadhiCta;
-      'api::home-samadhi.home-samadhi': ApiHomeSamadhiHomeSamadhi;
-      'api::home-testimonial.home-testimonial': ApiHomeTestimonialHomeTestimonial;
-      'api::home-yt.home-yt': ApiHomeYtHomeYt;
       'api::home.home': ApiHomeHome;
       'api::how-to-reach.how-to-reach': ApiHowToReachHowToReach;
       'api::influencer-form.influencer-form': ApiInfluencerFormInfluencerForm;
